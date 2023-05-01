@@ -3,7 +3,7 @@ class BranchesController < ApplicationController
 
   # GET /branches or /branches.json
   def index
-    @branches = Branch.all
+    @branches = Branch.order("created_at").paginate(page: params[:page], per_page: 10)
   end
 
   # GET /branches/1 or /branches/1.json
