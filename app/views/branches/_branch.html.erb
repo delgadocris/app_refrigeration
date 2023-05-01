@@ -14,17 +14,17 @@
   <% else %>
     <br>
     <p class="my-5">
-      <strong class="font mb-1">Fridge:</strong>
+      <strong class="font mb-1"><%= t('branch.fridge') %>:</strong>
       <%= branch.fridge %>
     </p>
 
     <p class="my-5">
-      <strong class="font mb-1">Temperature:</strong>
+      <strong class="font mb-1"><%= t('branch.temperature') %>:</strong>
       <%= branch.temperature %>
     </p>
 
     <p class="my-5">
-      <strong class="font mb-1">Date:</strong>
+      <strong class="font mb-1"><%= t('branch.created_at') %>:</strong>
       <%= branch.created_at.strftime('%d/%m/%Y %H:%M:%S') %>
     </p>
 

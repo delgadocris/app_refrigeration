@@ -29,34 +29,34 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
+es:
   hello: "Hello world"
+  app_title: "Refrigeración"
   accions:
     index: "%{attribute}"
-    new: "New %{attribute}"
-    edit: "Edit %{attribute}"
+    new: "Nuevo %{attribute}"
+    edit: "Editar %{attribute}"
     show: "Mostrar %{attribute}"
-    cancel: "Show %{attribute}"
-  branches:
-    branch:
-      one: "Branch"
-      other: "Branches"
-      created_at: "Created At"
-      fridge: 'Fridge'
-      temperature: 'Temperature'
+    cancel: "Cancelar %{attribute}"
+  branch:
+    one: "Sucursal"
+    other: "Sucursales"
+    created_at: "Fecha"
+    fridge: "Nevera"
+    temperature: "Temperatura"
   common:
-    back: "Back"
-    new: "New"
-    destroy: "Destroy"
-    edit: "Edit"
-    show: "Show"
-    save: "Save"
+    back: "Regresar"
+    new: "Nuevo"
+    destroy: "Eliminar"
+    edit: "Editar"
+    show: "Mostrar"
+    save: "Guardar"
   message:
     error:
       one: "Error"
-      other: "Errors"
-      prohibited: "Prohibited this %{attribute} from being saved:"
-    success_edit: "%{attribute} was successfully updated."
-    success_destroy: "%{attribute} was successfully destroyed."
-    success_create: "%{attribute} was successfully created."
-    confirm_destroy: "Are you sure do you want to destroy the %{attribute}?"
+      other: "Errores"
+      prohibited: "Prohibido guardar este %{attribute}:"
+    success_edit: "El %{attribute} fue actualizado exitosamente."
+    success_destroy: "El %{attribute} fue eliminado exitosamente."
+    success_create: "El %{attribute} fue creado exitosamente."
+    confirm_destroy: "¿Estás seguro que deseas eliminar el %{attribute}?"
