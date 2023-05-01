@@ -60,4 +60,4 @@ es:
     success_edit: "El %{attribute} fue actualizado exitosamente."
     success_destroy: "El %{attribute} fue eliminado exitosamente."
     success_create: "El %{attribute} fue creado exitosamente."
-    confirm_destroy: "¿Estás seguro que deseas eliminar el %{attribute}?"
+    confirm_destroy: "¿Estás seguro que deseas eliminar esta %{attribute}?"

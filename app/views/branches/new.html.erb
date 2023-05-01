@@ -1,4 +1,6 @@
+<% provide(:title, t('accions.new', attribute: t('branch.one'))) %>
 <div class="mx-auto md:w-2/3 w-full">
+  <br><br>
   <h1 class="font-bold text-4xl"><%= t('accions.new', attribute: t('branch.one')) %></h1>
 
   <%= render "form", branch: @branch %>

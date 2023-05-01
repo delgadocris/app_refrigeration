@@ -37,13 +37,12 @@ en:
     edit: "Edit %{attribute}"
     show: "Mostrar %{attribute}"
     cancel: "Show %{attribute}"
-  branches:
-    branch:
-      one: "Branch"
-      other: "Branches"
-      created_at: "Created At"
-      fridge: 'Fridge'
-      temperature: 'Temperature'
+  branch:
+    one: "Branch"
+    other: "Branches"
+    created_at: "Created At"
+    fridge: 'Fridge'
+    temperature: 'Temperature'
   common:
     back: "Back"
     new: "New"
@@ -60,4 +59,4 @@ en:
     success_edit: "%{attribute} was successfully updated."
     success_destroy: "%{attribute} was successfully destroyed."
     success_create: "%{attribute} was successfully created."
-    confirm_destroy: "Are you sure do you want to destroy the %{attribute}?"
+    confirm_destroy: "Are you sure do you want to destroy this %{attribute}?"

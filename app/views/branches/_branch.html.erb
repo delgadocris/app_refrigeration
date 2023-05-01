@@ -7,7 +7,7 @@
       <% if action_name != "show" %>
         <td><%= link_to t('common.show'), branch, class: "btn btn-success"%></td>
         <td><%= link_to t('common.edit'), edit_branch_path(branch), class: "btn btn-info"%></td>
-        <td><%= link_to t('common.destroy'), branch_path(branch), method: :delete, class: "btn btn-danger", data: { 'turbo-method': :delete, 'turbo-confirm': "Are you sure about deleted this fridge?" }%></td>
+        <td><%= link_to t('common.destroy'), branch_path(branch), method: :delete, class: "btn btn-danger", data: { 'turbo-method': :delete, 'turbo-confirm': t('message.confirm_destroy', attribute: t('branch.fridge').downcase) }%></td>
 
       <% end %>
     </tr>
