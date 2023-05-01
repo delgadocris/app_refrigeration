@@ -1,17 +1,33 @@
-<div id="<%= dom_id branch %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Fridge:</strong>
-    <%= branch.fridge %>
-  </p>
+<div id="dom_id branch">
+  <% if action_name == "index" %>
+    <tr>
+      <td><%= branch.fridge%></td>
+      <td><%= branch.temperature%></td>
+      <td><%= branch.created_at.strftime("%d/%m/%Y %H:%M:%S")%></td>
+      <% if action_name != "show" %>
+        <td><%= link_to t('common.show'), branch, class: "btn btn-success"%></td>
+        <td><%= link_to t('common.edit'), edit_branch_path(branch), class: "btn btn-info"%></td>
+        <td><%= link_to t('common.destroy'), branch_path(branch), method: :delete, class: "btn btn-danger", data: { 'turbo-method': :delete, 'turbo-confirm': "Are you sure about deleted this fridge?" }%></td>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Temperature:</strong>
-    <%= branch.temperature %>
-  </p>
+      <% end %>
+    </tr>
+  <% else %>
+    <br>
+    <p class="my-5">
+      <strong class="font mb-1">Fridge:</strong>
+      <%= branch.fridge %>
+    </p>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this branch", branch, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this branch', edit_branch_path(branch), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+    <p class="my-5">
+      <strong class="font mb-1">Temperature:</strong>
+      <%= branch.temperature %>
+    </p>
+
+    <p class="my-5">
+      <strong class="font mb-1">Date:</strong>
+      <%= branch.created_at.strftime('%d/%m/%Y %H:%M:%S') %>
+    </p>
+
+    <br>
   <% end %>
 </div>
