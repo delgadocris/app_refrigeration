@@ -1,6 +1,6 @@
 <%= form_with(model: branch, class: "contents", name:"survey") do |form| %>
   <% if branch.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(branch.errors.count, "error") %> <%= t('message.error.prohibited', attribute: t('branch.one')) =%> </h2>
       <ul>
         <% branch.errors.each do |error| %>
@@ -25,7 +25,6 @@
   <br>
 
   <div class="inline">
-    <%= form.submit t('common.new'), class: "btn btn-primary"%>
+    <%= form.submit t('common.save'), class: "btn btn-primary"%>
   </div>
-
 <% end %>

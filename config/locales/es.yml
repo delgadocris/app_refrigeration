@@ -51,6 +51,7 @@ es:
     edit: "Editar"
     show: "Mostrar"
     save: "Guardar"
+    centigrade: " °C"
   message:
     error:
       one: "Error"

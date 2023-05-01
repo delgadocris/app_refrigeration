@@ -2,7 +2,7 @@
   <% if action_name == "index" %>
     <tr>
       <td><%= branch.fridge%></td>
-      <td><%= branch.temperature%></td>
+      <td><%=branch.temperature + t('common.centigrade')%></td>
       <td><%= branch.created_at.strftime("%d/%m/%Y %H:%M:%S")%></td>
       <% if action_name != "show" %>
         <td><%= link_to t('common.show'), branch, class: "btn btn-success"%></td>
@@ -19,8 +19,8 @@
     </p>
 
     <p class="my-5">
-      <strong class="font mb-1"><%= t('branch.temperature') %>:</strong>
-      <%= branch.temperature %>
+      <strong class="font mb-1"><%= t('branch.temperature')%>:</strong>
+      <%= branch.temperature + t('common.centigrade')%>
     </p>
 
     <p class="my-5">
