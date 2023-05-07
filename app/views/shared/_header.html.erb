@@ -3,8 +3,19 @@
     <div class="navbar-header">
       <%= link_to (inline_svg('weather.svg', class: "some-class")), root_path %>
     </div>
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Branches", branches_path %></li>
-      </ul>
-    </div>
-  </nav>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Branches", branches_path %></li>
+      <% if user_signed_in? %>
+        <% if current_user.role == 'admin' %>
+          <li><%= link_to t('devise.sign_up'), new_user_registration_path %></li>
+          <li><%= link_to t('devise.forgot_password'), new_password_path(current_user) %></li>
+        <% end %>
+        <li><%= link_to t('devise.log_out'), destroy_user_session_path, method: :delete, data: { turbo_method: :delete, turbo_confirm: t('devise.sessions.sure_signed_out')} %></li>
+        <li class="li-class">Rol: <%= current_user.role.try(:capitalize) %></li>
+        <li class="li-class">Correo: <%= current_user.email %></li>
+      <% else %>
+        <li><%= link_to t('devise.log_in'), new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

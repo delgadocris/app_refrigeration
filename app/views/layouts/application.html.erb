@@ -15,6 +15,12 @@
     <%= render 'shared/header' %>
     <main class="container mx-auto px-5">
       <h1><%= t('app_title') %></h1>
+      <% if notice.present? %>
+        <p class="alert alert-success" id="notice"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-danger" id="alert"><%= alert %></p>
+      <% end %>
       <%= yield %>
     </main>
   </body>

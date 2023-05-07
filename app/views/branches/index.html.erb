@@ -1,16 +1,12 @@
 <div class="w-full">
 
-  <% if notice.present? %>
-    <p class="alert alert-success" id="notice"><%= notice %></p>
-  <% end %>
-
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl"><%= provide(:title, t('branch.other')) %> </h1>
   </div>
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl"><%= t('branch.other') %></h1>
-    <%= link_to t('common.new'), new_branch_path, class: "btn btn-primary" %>
+    <%= link_to t('common.new'), new_branch_path, class: "btn btn-primary" if user_signed_in? && current_user.role == 'admin' %>
   </div>
 
   <table class="table" id="dom_id branch">

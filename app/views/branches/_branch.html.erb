@@ -4,11 +4,15 @@
       <td><%= branch.fridge%></td>
       <td><%=branch.temperature + t('common.centigrade')%></td>
       <td><%= branch.created_at.strftime("%d/%m/%Y %H:%M:%S")%></td>
+      <td><%= link_to t('common.show'), branch, class: "btn btn-success"%></td>
       <% if action_name != "show" %>
-        <td><%= link_to t('common.show'), branch, class: "btn btn-success"%></td>
-        <td><%= link_to t('common.edit'), edit_branch_path(branch), class: "btn btn-info"%></td>
-        <td><%= link_to t('common.destroy'), branch_path(branch), method: :delete, class: "btn btn-danger", data: { 'turbo-method': :delete, 'turbo-confirm': t('message.confirm_destroy', attribute: t('branch.fridge').downcase) }%></td>
-
+        <% if user_signed_in? && current_user.role == 'admin' %>
+          <td><%= link_to t('common.edit'), edit_branch_path(branch), class: "btn btn-info"%></td>
+          <td><%= link_to t('common.destroy'), branch_path(branch), method: :delete, class: "btn btn-danger", data: { 'turbo-method': :delete, 'turbo-confirm': t('message.confirm_destroy', attribute: t('branch.fridge').downcase) }%></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
       <% end %>
     </tr>
   <% else %>
