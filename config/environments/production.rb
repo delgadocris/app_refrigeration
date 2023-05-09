@@ -92,6 +92,11 @@ Rails.application.configure do
     open_timeout:         5,
     read_timeout:         5 }
 
+  config.refrigeration = {
+    url: ENV['REFRIGERATION_URL'],
+    auth_token: ENV['REFRIGERATION_TOKEN']
+  }
+
   # Use a different logger for distributed setups.
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")

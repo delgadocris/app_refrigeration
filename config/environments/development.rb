@@ -72,6 +72,11 @@ Rails.application.configure do
     enable_starttls_auto: true,
     open_timeout:         5,
     read_timeout:         5 }
+
+  config.refrigeration = {
+    url: ENV['REFRIGERATION_URL'],
+    auth_token: ENV['REFRIGERATION_TOKEN']
+  }
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
