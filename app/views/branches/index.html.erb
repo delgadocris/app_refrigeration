@@ -4,6 +4,18 @@
     <h1 class="font-bold text-4xl"><%= provide(:title, t('branch.other')) %> </h1>
   </div>
 
+  <% if user_signed_in? and current_user.role == 'admin' %>
+    <div>
+      <h1 class="font-bold text-4xl"><%= "Seleccione la nevera para consultar la temperatura" %> </h1>
+      <p id="select-notice"></p>
+      <div class="input-group">
+        <%= select_tag(:select_temperature, options_for_select(@branches.map{|i| i.fridge.to_i}), class: "select-class")%>
+        <button class="btn btn-info btn-info-select" onclick="getFridgeTemperature()">
+          <span class="mx-2"><%= t('common.by_fridge')%></span>
+        </button>
+      </div>
+    </div>
+  <% end %>
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl"><%= t('branch.other') %></h1>
     <%= link_to t('common.new'), new_branch_path, class: "btn btn-primary" if user_signed_in? && current_user.role == 'admin' %>
@@ -31,5 +43,24 @@
 
 </div>
 
-
-
+<script>
+function getFridgeTemperature() {
+  var fridge = $('select#select_temperature').val()
+  $.ajax({
+    url: '<%= by_fridge_api_branches_path(format: :json) %>',
+    local: true,
+    type: 'GET',
+    remote: true,
+    data: {
+      fridge: fridge,
+      turbo: false
+    },
+    error: function(error, textStatus, errorThrown) {
+      $("#select-notice").text(JSON.parse(error.responseText).error).addClass("alert alert-danger");
+    },
+    success: function(data) {
+      $("#select-notice").text(data.message).addClass("alert alert-info");
+    },
+  })
+}
+</script>

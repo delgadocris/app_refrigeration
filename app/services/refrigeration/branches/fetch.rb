@@ -1,6 +1,6 @@
 module Refrigeration
   module Branches
-    class Fridge < Api
+    class Fetch < Api
       UNPROCESSABLE = 'No fue posible extraer los datos de la nevera'.freeze
       private_constant :UNPROCESSABLE
 

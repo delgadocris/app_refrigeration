@@ -1,10 +1,11 @@
 class Api::V1::BranchesController < Api::ApplicationController
+  before_action :authenticate_user!
 
   # GET "/api/v1/branches/by_fridge?fridge=#{fridge}"
   def by_fridge
     return json_response('Debe agregar una nevera correcta', :bad_request) unless params[:fridge].present?
 
-    response = Refrigeration::Branches::Fridge.new(params[:fridge]).by_fridge
+    response = Refrigeration::Branches::Fetch.new(params[:fridge]).by_fridge
     return json_response(response[:message], response[:status]) if response[:status] == :not_found
 
     @message = JSON.parse(response.body)['message']
@@ -12,5 +13,4 @@ class Api::V1::BranchesController < Api::ApplicationController
 
     render :by_fridge
   end
-
 end

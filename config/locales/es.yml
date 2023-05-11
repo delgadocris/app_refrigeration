@@ -24,6 +24,7 @@ es:
     show: "Mostrar"
     save: "Guardar"
     centigrade: " °C"
+    by_fridge: "Buscar"
   message:
     error:
       one: "Error"
@@ -125,3 +126,20 @@ es:
         one: "1 Error - No puede ser guardado"
         other: "%{count} Errores - No puede ser guardado"
     format: "%{attribute} %{message}"
+  flash:
+    actions:
+      index:
+        notice: '%{resource_name} se mostró exitosamente.'
+        alert: '%{resource_name} no se pudo mostrar.'
+      create:
+        notice: '%{resource_name} se creó exitosamente.'
+        alert: '%{resource_name} no se pudo crear.'
+      update:
+        notice: '%{resource_name} se modificó exitosamente.'
+        alert: '%{resource_name} no se pudo modificar.'
+      show:
+        notice: '%{resource_name} se mostró exitosamente.'
+        alert: '%{resource_name} no se pudo mostrar.'
+      destroy:
+        notice: '%{resource_name} se eliminó exitosamente.'
+        alert: '%{resource_name} no se pudo eliminar.'

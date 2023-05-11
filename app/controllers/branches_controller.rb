@@ -5,7 +5,7 @@ class BranchesController < ApplicationController
 
   # GET /branches or /branches.json
   def index
-    @branches = Branch.order("created_at").paginate(page: params[:page], per_page: 10)
+    @branches = Branch.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   # GET /branches/1 or /branches/1.json
@@ -27,7 +27,7 @@ class BranchesController < ApplicationController
 
     respond_to do |format|
       if @branch.save
-        format.html { redirect_to branch_url(@branch), notice: "Branch was successfully created." }
+        format.html { redirect_to branch_url(@branch), notice: t('flash.actions.create.notice', resource_name: t('branch.one')) }
         format.json { render :show, status: :created, location: @branch }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class BranchesController < ApplicationController
   def update
     respond_to do |format|
       if @branch.update(branch_params)
-        format.html { redirect_to branch_url(@branch), notice: "Branch was successfully updated." }
+        format.html { redirect_to branch_url(@branch), notice: t('flash.actions.update.notice', resource_name: t('branch.one')) }
         format.json { render :show, status: :ok, location: @branch }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class BranchesController < ApplicationController
     @branch.destroy
 
     respond_to do |format|
-      format.html { redirect_to branches_url, notice: "Branch was successfully destroyed." }
+      format.html { redirect_to branches_url, notice: t('flash.actions.destroy.notice', resource_name: t('branch.one')) }
       format.json { head :no_content }
     end
   end
