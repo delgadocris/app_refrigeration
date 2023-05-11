@@ -14,8 +14,9 @@ en:
     one: "Branch"
     other: "Branches"
     created_at: "Created At"
-    fridge: 'Fridge'
-    temperature: 'Temperature'
+    fridge: "Fridge"
+    temperature: "Temperature"
+    time_ago: "Last measure ago"
   common:
     back: "Back"
     new: "New"

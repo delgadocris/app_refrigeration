@@ -16,6 +16,7 @@ es:
     created_at: "Fecha"
     fridge: "Nevera"
     temperature: "Temperatura"
+    time_ago: "Última medida hace"
   common:
     back: "Regresar"
     new: "Nuevo"
