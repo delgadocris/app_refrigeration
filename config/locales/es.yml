@@ -17,6 +17,7 @@ es:
     fridge: "Nevera"
     temperature: "Temperatura"
     time_ago: "Última medida hace"
+    subtitle: "Seleccione la nevera para consultar la temperatura"
   common:
     back: "Regresar"
     new: "Nuevo"

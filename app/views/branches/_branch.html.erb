@@ -3,8 +3,8 @@
     <tr>
       <td><%= branch.fridge%></td>
       <td><%=branch.temperature + t('common.centigrade')%></td>
-      <td><%= branch.created_at.strftime("%d/%m/%Y %r")%></td>
-      <td><%= time_ago_in_words(branch.created_at).capitalize   %></td>
+      <td><%= branch.updated_at.strftime("%d/%m/%Y %r")%></td>
+      <td><%= time_ago_in_words(branch.updated_at).capitalize   %></td>
       <td><%= link_to t('common.show'), branch, class: "btn btn-success"%></td>
       <% if action_name != "show" %>
         <% if user_signed_in? && current_user.role == 'admin' %>
@@ -30,12 +30,12 @@
 
     <p class="my-5">
       <strong class="font mb-1"><%= t('branch.created_at') %>:</strong>
-      <%= branch.created_at.strftime('%d/%m/%Y %r') %>
+      <%= branch.updated_at.strftime('%d/%m/%Y %r') %>
     </p>
 
     <p class="my-5">
       <strong class="font mb-1"><%= t('branch.time_ago') %>:</strong>
-      <%= time_ago_in_words(branch.created_at).capitalize %>
+      <%= time_ago_in_words(branch.updated_at).capitalize %>
     </p>
 
     <br>

@@ -5,7 +5,7 @@ class BranchesController < ApplicationController
 
   # GET /branches or /branches.json
   def index
-    @branches = Branch.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @branches = Branch.order(updated_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   # GET /branches/1 or /branches/1.json

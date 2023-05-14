@@ -6,7 +6,7 @@
 
   <% if user_signed_in? and current_user.role == 'admin' %>
     <div>
-      <h1 class="font-bold text-4xl"><%= "Seleccione la nevera para consultar la temperatura" %> </h1>
+      <h1 class="font-bold text-4xl"><%= t('branch.subtitle') %> </h1>
       <p id="select-notice"></p>
       <div class="input-group">
         <%= select_tag(:select_temperature, options_for_select(@branches.map{|i| i.fridge.to_i}), class: "select-class")%>
