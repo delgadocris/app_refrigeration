@@ -2,7 +2,8 @@
   <% if action_name == "index" %>
     <tr>
       <td><%= branch.fridge%></td>
-      <td><%=branch.temperature + t('common.centigrade')%></td>
+      <td><%= branch.temperature + t('common.centigrade')%></td>
+      <td><%= image_tag (branch.get_icon + "_small.png"), class: "img-responsive-small"%></td>
       <td><%= branch.updated_at.strftime("%d/%m/%Y %r")%></td>
       <td><%= time_ago_in_words(branch.updated_at).capitalize   %></td>
       <td><%= link_to t('common.show'), branch, class: "btn btn-success"%></td>
@@ -17,27 +18,32 @@
       <% end %>
     </tr>
   <% else %>
-    <br>
-    <p class="my-5">
-      <strong class="font mb-1"><%= t('branch.fridge') %>:</strong>
-      <%= branch.fridge %>
-    </p>
-
-    <p class="my-5">
-      <strong class="font mb-1"><%= t('branch.temperature')%>:</strong>
-      <%= branch.temperature + t('common.centigrade')%>
-    </p>
-
-    <p class="my-5">
-      <strong class="font mb-1"><%= t('branch.created_at') %>:</strong>
-      <%= branch.updated_at.strftime('%d/%m/%Y %r') %>
-    </p>
-
-    <p class="my-5">
-      <strong class="font mb-1"><%= t('branch.time_ago') %>:</strong>
-      <%= time_ago_in_words(branch.updated_at).capitalize %>
-    </p>
-
+    <div>
+      <div>
+        <tr>
+          <td>
+            <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                  <span class="icon"><%= image_tag (branch.get_icon + "_large.png"), class: "img-responsive", style: 'width:90px; height:50px%;'%></span>
+                  <div class="title-temp"><p><strong class="font mb-1"><%= t('branch.fridge') %>: <%= branch.fridge %></strong></p></div>
+                  <div class="temp"><%= branch.temperature + t('common.centigrade')%></div>
+                    <div class="row">
+                      <div class="col-4">
+                          <div class=""><%= time_ago_in_words(branch.updated_at).capitalize %></div>
+                          <div class="value"><br></div>
+                          <div class="value"><%= branch.updated_at.strftime('%d/%m/%Y %r') %></div>
+                          <div class="value"><br></div>
+                          <div class="value"><%= link_to t('common.back'), branches_path, class: "btn btn-warning", style: "align:left"%></td></div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          <td>
+        </tr>
+      </div>
+    </div>
     <br>
   <% end %>
 </div>
