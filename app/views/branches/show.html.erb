@@ -1,10 +1,9 @@
-<% provide(:title, t('accions.show', attribute: t('branch.one'))) %>
+<% provide(:title, t('accions.show', attribute: "t('branch.one')")) %>
 <div class="mx-auto md:w-2/3 w-full">
   <div class="mx-auto">
     <br><br>
-    <h1 class="font-bold text-4xl"><%= t('accions.show', attribute: t('branch.one')) %></h1>
+    <h1 class="font-bold text-4xl"></h1>
 
     <%= render @branch %>
-    <%= link_to t('common.back'), branches_path, class: "btn btn-warning"%></td>
   </div>
 </div>

@@ -14,10 +14,10 @@ es:
     one: "Sucursal"
     other: "Sucursales"
     created_at: "Fecha"
-    fridge: "Nevera"
+    fridge: "Cava"
     temperature: "Temperatura"
     time_ago: "Última medida hace"
-    subtitle: "Seleccione la nevera para consultar la temperatura"
+    subtitle: "Seleccione la cava para consultar la temperatura"
   common:
     back: "Regresar"
     new: "Nuevo"
