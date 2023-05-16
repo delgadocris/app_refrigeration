@@ -18,6 +18,7 @@ es:
     temperature: "Temperatura"
     time_ago: "Última medida hace"
     subtitle: "Seleccione la cava para consultar la temperatura"
+    status: "Estado"
   common:
     back: "Regresar"
     new: "Nuevo"

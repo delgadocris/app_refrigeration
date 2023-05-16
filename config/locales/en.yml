@@ -18,6 +18,7 @@ en:
     temperature: "Temperature"
     time_ago: "Last measure ago"
     subtitle: "Select the fridge to check the temperature"
+    status: "Status"
   common:
     back: "Back"
     new: "New"
