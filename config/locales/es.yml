@@ -19,6 +19,9 @@ es:
     time_ago: "Última medida hace"
     subtitle: "Seleccione la cava para consultar la temperatura"
     status: "Estado"
+  user:
+    one: "Usuario"
+    other: "Usuarios"
   common:
     back: "Regresar"
     new: "Nuevo"
@@ -129,6 +132,7 @@ es:
         one: "1 Error - No puede ser guardado"
         other: "%{count} Errores - No puede ser guardado"
     format: "%{attribute} %{message}"
+    not_authorized: "%{attribute} no autorizado para ejecutar la acción"
   flash:
     actions:
       index:

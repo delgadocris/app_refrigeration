@@ -19,6 +19,9 @@ en:
     time_ago: "Last measure ago"
     subtitle: "Select the fridge to check the temperature"
     status: "Status"
+  user:
+    one: "User"
+    other: "Users"
   common:
     back: "Back"
     new: "New"
@@ -38,6 +41,7 @@ en:
     success_create: "%{attribute} was successfully created."
     confirm_destroy: "Are you sure do you want to destroy this %{attribute}?"
     not_found: "%{attribute} not found"
+    not_authorized: "%{attribute} not authorized to execute this action"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

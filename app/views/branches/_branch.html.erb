@@ -34,6 +34,8 @@
                           <div class="value"><br></div>
                           <div class="value"><%= branch.updated_at.strftime('%d/%m/%Y %r') %></div>
                           <div class="value"><br></div>
+                          <div class="header"><%= branch.user.email %></div>
+                          <div class="value"><br></div>
                           <div class="value"><%= link_to t('common.back'), branches_path, class: "btn btn-warning", style: "align:left"%></td></div>
                       </div>
                     </div>

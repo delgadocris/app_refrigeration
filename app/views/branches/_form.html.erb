@@ -13,6 +13,15 @@
   <br>
 
   <div class="my-5">
+    <%= form.label :user_id, t('user.one')  %>
+    <% if branch.new_record? %>
+      <%= form.select :user_id, options_for_select(@users, :user_id), {}, class: "select" %><br>
+    <% else %>
+      <%= form.select :user_id, options_for_select(@users, branch.user_id), {}, class: "select" %><br>
+    <% end %>
+  </div>
+
+  <div class="my-5">
     <%= form.label t('branch.fridge') %>
     <%= form.text_field :fridge, class: "form-control" %>
   </div>
