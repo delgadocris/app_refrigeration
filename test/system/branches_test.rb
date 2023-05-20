@@ -16,6 +16,7 @@ class BranchesTest < ApplicationSystemTestCase
 
     fill_in "Fridge", with: @branch.fridge
     fill_in "Temperature", with: @branch.temperature
+    fill_in "Humidity", with: @branch.humidity
     click_on "Create Branch"
 
     assert_text "Branch was successfully created"
@@ -28,6 +29,7 @@ class BranchesTest < ApplicationSystemTestCase
 
     fill_in "Fridge", with: @branch.fridge
     fill_in "Temperature", with: @branch.temperature
+    fill_in "Humidity", with: @branch.humidity
     click_on "Update Branch"
 
     assert_text "Branch was successfully updated"

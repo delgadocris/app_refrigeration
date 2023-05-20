@@ -2,7 +2,8 @@
   <% if action_name == "index" %>
     <tr>
       <td><%= branch.fridge%></td>
-      <td><%= branch.temperature + t('common.centigrade')%></td>
+      <td><%= branch.temperature + t('common.centigrade') if current_user.show_temperature? %></td>
+      <td><%= branch.humidity + t('common.percentage') if current_user.show_humidity? %></td>
       <td><%= image_tag (branch.get_icon + "_small.png"), class: "img-responsive-small"%></td>
       <td><%= branch.updated_at.strftime("%d/%m/%Y %r")%></td>
       <td><%= time_ago_in_words(branch.updated_at).capitalize   %></td>
@@ -23,22 +24,23 @@
         <tr>
           <td>
             <div class="row">
-            <div class="col-md-4">
+              <div class="col-md-4">
                 <div class="card">
                   <span class="icon"><%= image_tag (branch.get_icon + "_large.png"), class: "img-responsive", style: 'width:90px; height:50px%;'%></span>
                   <div class="title-temp"><p><strong class="font mb-1"><%= t('branch.fridge') %>: <%= branch.fridge %></strong></p></div>
-                  <div class="temp"><%= branch.temperature + t('common.centigrade')%></div>
-                    <div class="row">
-                      <div class="col-4">
-                          <div class=""><%= time_ago_in_words(branch.updated_at).capitalize %></div>
-                          <div class="value"><br></div>
-                          <div class="value"><%= branch.updated_at.strftime('%d/%m/%Y %r') %></div>
-                          <div class="value"><br></div>
-                          <div class="header"><%= branch.user.email %></div>
-                          <div class="value"><br></div>
-                          <div class="value"><%= link_to t('common.back'), branches_path, class: "btn btn-warning", style: "align:left"%></td></div>
-                      </div>
+                  <div class="temp"><%= branch.temperature + t('common.centigrade') if current_user.show_temperature? %></div>
+                  <div class="temp"><%= branch.humidity + t('common.percentage') if current_user.show_humidity? %></div>
+                  <div class="row">
+                    <div class="col-4">
+                        <div class=""><%=time_ago_in_words(branch.updated_at).capitalize %></div>
+                        <div class="value"><br></div>
+                        <div class="value"><%= branch.updated_at.strftime('%d/%m/%Y %r') %></div>
+                        <div class="value"><br></div>
+                        <div class="header"><%= branch.user.email %></div>
+                        <div class="value"><br></div>
+                        <div class="value"><%= link_to t('common.back'), branches_path, class: "btn btn-warning", style: "align:left"%></td></div>
                     </div>
+                  </div>
                 </div>
               </div>
             </div>
