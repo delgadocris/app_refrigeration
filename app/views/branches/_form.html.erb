@@ -26,10 +26,19 @@
     <%= form.text_field :fridge, class: "form-control" %>
   </div>
 
+  <% if current_user.show_temperature? %>
   <div class="my-5">
     <%= form.label t('branch.temperature') %>
     <%= form.text_field :temperature, class: "form-control" %>
   </div>
+  <% end %>
+
+  <% if current_user.show_humidity? %>
+  <div class="my-5">
+    <%= form.label t('branch.humidity') %>
+    <%= form.text_field :humidity, class: "form-control" %>
+  </div>
+  <% end %>
 
   <br>
 

@@ -27,7 +27,8 @@
     <thead>
       <tr>
         <th scope="col"><%= t('branch.fridge') %></th>
-        <th scope="col"><%= t('branch.temperature') %></th>
+        <th scope="col"><%= t('branch.temperature') if current_user.show_temperature? %></th>
+        <th scope="col"><%= t('branch.humidity') if current_user.show_humidity? %></th>
         <th scope="col"><%= t('branch.status') %></th>
         <th scope="col"><%= t('branch.created_at') %></th>
         <th scope="col"><%= t('branch.time_ago') %></th>

@@ -16,6 +16,7 @@ en:
     created_at: "Created At"
     fridge: "Fridge"
     temperature: "Temperature"
+    humidity: "Humidity"
     time_ago: "Last measure ago"
     subtitle: "Select the fridge to check the temperature"
     status: "Status"
@@ -29,7 +30,8 @@ en:
     edit: "Edit"
     show: "Show"
     save: "Save"
-    centigrade: " °C"
+    centigrade: "°C"
+    percentage: " %"
     by_fridge: "Search"
   message:
     error:

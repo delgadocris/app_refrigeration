@@ -16,6 +16,7 @@ es:
     created_at: "Fecha"
     fridge: "Cava"
     temperature: "Temperatura"
+    humidity: "Humedad"
     time_ago: "Última medida hace"
     subtitle: "Seleccione la cava para consultar la temperatura"
     status: "Estado"
@@ -29,7 +30,8 @@ es:
     edit: "Editar"
     show: "Mostrar"
     save: "Guardar"
-    centigrade: " °C"
+    centigrade: "°C"
+    percentage: " %"
     by_fridge: "Buscar"
   message:
     error:

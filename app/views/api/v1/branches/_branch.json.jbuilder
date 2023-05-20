@@ -1,1 +1,1 @@
-json.extract! branch, :id, :fridge, :temperature, :created_at, :updated_at
+json.extract! branch, :id, :fridge, :temperature, :humidity, :created_at, :updated_at

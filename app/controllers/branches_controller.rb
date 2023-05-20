@@ -96,6 +96,6 @@ class BranchesController < ApplicationController
     end
 
     def branch_params
-      params.require(:branch).permit(:id, :fridge, :temperature, :user_id)
+      params.require(:branch).permit(:id, :fridge, :temperature, :humidity, :user_id)
     end
 end
